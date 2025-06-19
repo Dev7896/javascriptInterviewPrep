@@ -15,7 +15,7 @@ When a function is defined outside an object, and we want to bind it to a specif
 
 call() : immediately calls the function and arguments are provided one by one.
 apply() : immediately calls and arguments are passed as an array.
-bind() : returns a function copy and arguments are passed one by one.original function is not called and can be called later.
+bind() : returns a function copy with this keyword permanently set to given value and arguments are passed one by one.original function is not called and can be called later.
 
 // function makeUser(){
 //   return {
@@ -64,3 +64,18 @@ function greet(name , name2){
 // bindUserGreet() ;
 
 greet.apply(user , ['rahul' , 'acharya'])
+
+
+## what is output and why ?
+
+const person = { name: "Max" };
+function printName() {
+  console.log(this.name);
+}
+const boundFunc = printName.bind(person);
+boundFunc.call({ name: "Leo" });
+
+output : 
+        max
+
+
