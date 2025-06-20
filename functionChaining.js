@@ -57,3 +57,43 @@ class Chain {
 
 const counter2 = new Chain() ; // Output: 3
 counter2.inc().dec().dec().show() ;
+console.log(globalThis)
+
+let d = {
+  name : 'rahul'
+}
+
+const e = d ;
+
+d = null ;
+
+console.log(e)
+
+function parent (){
+  const user = {
+    name : 'rahul'
+  }
+   return () =>{
+    console.log(user.name)
+    return () =>{
+      console.log(user.name)
+    }
+   }
+}
+
+let secondFunc = parent() ;
+
+const thirdfunc = secondFunc() ;
+thirdfunc()  ;
+
+
+function test2(){
+  laekedVar = 'global variable' ;
+}
+
+test2() ;
+
+console.log(laekedVar
+)
+
+

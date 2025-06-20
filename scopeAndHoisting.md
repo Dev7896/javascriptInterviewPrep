@@ -18,14 +18,14 @@ let and const are block-scoped, meaning they exist only inside {}.
 
 example :
 function testScope() {
-  let a = 10; // block scoped
-  if (true) {
-    var b = 20; // function scoped
-    let c = 30; // block scoped
-  }
-  console.log(a); // 10
-  console.log(b); // 20
-  console.log(c); // ❌ ReferenceError
+let a = 10; // block scoped
+if (true) {
+var b = 20; // function scoped
+let c = 30; // block scoped
+}
+console.log(a); // 10
+console.log(b); // 20
+console.log(c); // ❌ ReferenceError
 }
 
 In JavaScript, variable and function declarations are moved (hoisted) to the top of their scope during the compilation phase — but not their initializations.
@@ -42,20 +42,18 @@ let and const are hoisted but not initialized — they are in a Temporal Dead Zo
 
 ---
 
-### hoisting 
-
+### hoisting
 
 sayHello(); // ✅ Works (function declaration is hoisted)
 
 function sayHello() {
-  console.log("Hello!");
+console.log("Hello!");
 }
 
 sayHi(); // ❌ TypeError: sayHi is not a function
 var sayHi = function () {
-  console.log("Hi!");
+console.log("Hi!");
 };
-
 
 Function declarations are fully hoisted.
 
@@ -63,5 +61,11 @@ Function expressions using var are hoisted as undefined.
 
 what is tdz temporal dead zone ?
 
-if variable is delcared using let or const so it is hoisted but not initialized so you can't use it cause it will throw referenceError 
+if variable is delcared using let or const so it is hoisted but not initialized so you can't use it cause it will throw referenceError
 that timeperiod is called as tdz .
+
+## scope chain
+
+JavaScript engine uses scopes to find out the exact location or accessibility of variables and that particular process is known as Scope Chain.
+Scope Chain means that one variable has a scope (it may be global or local/function or block scope) is used by another variable or function having another scope (may be global or local/function or block scope).
+This complete chain formation goes on and stops when the user wishes to stop it according to the requirement.
