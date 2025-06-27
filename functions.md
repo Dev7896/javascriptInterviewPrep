@@ -18,3 +18,11 @@ const greet = function (name){
 setTimeout(function (name = 'jhon'){
     console.log('welcome ' + name ) ; 
 } , 1000)
+
+## what is pure function ?
+
+A pure function is a function that:
+
+Always returns the same output for the same input.
+
+Has no side effects — it doesn’t modify external variables, change the DOM, or perform I/O like API calls or file writing.

@@ -28,6 +28,7 @@ console.log(b); // 20
 console.log(c); // ❌ ReferenceError
 }
 
+hoisting 
 In JavaScript, variable and function declarations are moved (hoisted) to the top of their scope during the compilation phase — but not their initializations.
 
 console.log(a); // undefined (hoisted)
